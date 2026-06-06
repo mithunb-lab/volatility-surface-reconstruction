@@ -1,76 +1,43 @@
 # Volatility Surface Reconstruction
 
-## Competition
-
-FinClub Open Project 2
-
 ## Objective
 
-Reconstruct missing implied volatility values in an options volatility surface.
+Reconstruct missing implied volatility values in a NIFTY options volatility surface.
+
+---
 
 ## Dataset
 
 - 975 timestamps
 - 28 option contracts
 - 5460 missing values
+- Includes underlying price and implied volatilities
 
-## Methodology
+---
 
-### Baseline
+## Methods Evaluated
 
-- Iterative Imputer (Bayesian Ridge)
+| Method | Score |
+|----------|----------|
+| Iterative Imputer | 0.0001291081 |
+| PCHIP Interpolation | 0.0000731591 |
+| Cubic Spline | 0.0002775212 |
+| Akima Interpolation | 0.0014327977 |
+| Moneyness PCHIP | 0.0000963289 |
+| Linear Strike Interpolation | 0.0000423397 |
 
-Public Score:
+---
 
-```text
-0.0001291081
-```
+## Final Method
 
-### Final Approach
+1. Separate call and put option chains
+2. Sort contracts by strike
+3. Apply linear interpolation across strikes
+4. Generate reconstructed volatility surface
+5. Create competition submission
 
-1. Strike-wise PCHIP interpolation
-2. Iterative Imputer refinement
+---
 
-Public Score:
+## Best Public Leaderboard Score
 
-```text
-0.0000731591
-```
-
-### Improvement
-
-```text
-0.0001291081 → 0.0000731591
-```
-
-Approximately 43% reduction in error.
-
-## Repository Structure
-
-```text
-data/
-notebooks/
-results/
-```
-
-## Technologies
-
-- Python
-- Pandas
-- NumPy
-- SciPy
-- Scikit-Learn
-
-## Reproduction
-
-Open:
-
-```text
-notebooks/Final_Submission.ipynb
-```
-
-Run all cells.
-
-## Author
-
-B Mithun
+0.0000423397
