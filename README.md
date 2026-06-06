@@ -1,15 +1,12 @@
 # Volatility Surface Reconstruction
 
-Public leaderboard score: 0.0001291081
+Public leaderboard score:0.0000731591
 
 ## Repository Structure
 
 - data/: datasets and reconstructed outputs
 - notebooks/: EDA and final submission notebook
 - results/: competition submission files
-## Best Public Leaderboard Score
-
-0.0000731591
 
 ## Final Approach
 
