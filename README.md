@@ -1,6 +1,6 @@
 # Volatility Surface Reconstruction
 
-Public leaderboard score:0.0000731591
+Public leaderboard score: 0.0000731591
 
 ## Repository Structure
 
